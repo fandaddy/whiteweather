@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import jiangxiaobai.com.whiteweather.R;
+import jiangxiaobai.com.whiteweather.service.AutoUpdateService;
 import jiangxiaobai.com.whiteweather.util.HttpCallbackListener;
 import jiangxiaobai.com.whiteweather.util.HttpUtil;
 import jiangxiaobai.com.whiteweather.util.Utility;
@@ -183,8 +184,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         currentDateText.setText(prefs.getString("current_date", ""));
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
-//        Intent intent = new Intent(this, AutoUpdateService.class);
-//        startService(intent);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
